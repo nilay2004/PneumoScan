@@ -44,22 +44,56 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Run the application:
+4. Add the model file:
+   - Place your trained model file (`vgg16_model_new.keras`) in the `models` directory
+   - See `models/README.md` for more details
+
+5. Run the application:
 ```bash
 python app.py
 ```
 
-5. Open your browser and navigate to `http://localhost:5000`
+6. Open your browser and navigate to `http://localhost:5000`
+
+## Deployment
+
+### Deploying to Render
+
+1. Create a Render account at https://render.com
+
+2. Create a new Web Service:
+   - Connect your GitHub repository
+   - Name: `pneumoscan` (or your preferred name)
+   - Environment: `Python 3`
+   - Build Command: `./build.sh`
+   - Start Command: `gunicorn app:app`
+
+3. Add Environment Variables:
+   - `PYTHON_VERSION`: `3.11.0`
+   - `FLASK_APP`: `app.py`
+   - `FLASK_ENV`: `production`
+
+4. Add the Model File:
+   - Before deploying, make sure to add your model file to the `models` directory
+   - The file should be named `vgg16_model_new.keras`
+   - Commit and push the model file to your repository
+
+5. Deploy:
+   - Click "Create Web Service"
+   - Wait for the deployment to complete
+   - Your application will be available at `https://your-app-name.onrender.com`
 
 ## Project Structure
 
 ```
 PneumoScan/
 ├── app.py              # Main Flask application
-├── models/            # Directory for model files (not included in repo)
+├── models/            # Directory for model files
+│   └── README.md     # Model setup instructions
 ├── static/            # Static files (CSS, JS, images)
 ├── templates/         # HTML templates
 ├── requirements.txt   # Python dependencies
+├── build.sh          # Build script for deployment
 └── README.md         # Project documentation
 ```
 

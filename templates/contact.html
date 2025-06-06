@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - PneumoScan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-600 to-blue-700 p-4 shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-white text-2xl font-bold flex items-center">
+                    <i class="fas fa-lungs mr-2"></i>
+                    PneumoScan
+                </a>
+                <ul class="flex space-x-8">
+                    <li><a href="/" class="text-white hover:text-blue-200 transition-colors">Home</a></li>
+                    <li><a href="/about" class="text-white hover:text-blue-200 transition-colors">About</a></li>
+                    <li><a href="/features" class="text-white hover:text-blue-200 transition-colors">Features</a></li>
+                    <li><a href="/applications" class="text-white hover:text-blue-200 transition-colors">Applications</a></li>
+                    <li><a href="/contact" class="text-white font-bold border-b-2 border-white">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 py-20 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h1 class="text-5xl font-bold mb-4">Contact Us</h1>
+            <p class="text-xl text-blue-100">Get in touch with the PneumoScan team</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-6">
+        <!-- Contact Form Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-envelope text-blue-600 mr-4"></i>
+                Send us a Message
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors" required>
+                            <span id="nameError" class="text-red-500 text-sm hidden">Name is required.</span>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors" required>
+                            <span id="emailError" class="text-red-500 text-sm hidden">Valid email is required.</span>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors" required>
+                            <span id="subjectError" class="text-red-500 text-sm hidden">Subject is required.</span>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors" required></textarea>
+                            <span id="messageError" class="text-red-500 text-sm hidden">Message is required.</span>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">CAPTCHA: What is 5 + 3?</label>
+                            <input type="number" id="captcha" name="captcha" class="w-20 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors" required>
+                            <span id="captchaError" class="text-red-500 text-sm hidden">Incorrect. Please enter 8.</span>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Send Message
+                        </button>
+                        <span id="successMsg" class="text-green-500 hidden">Message sent successfully!</span>
+                    </form>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl w-8"></i>
+                                <span>Mumbai, Maharashtra, India</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-envelope text-blue-600 text-xl w-8"></i>
+                                <span>contact@pneumoscan.ai</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-phone text-blue-600 text-xl w-8"></i>
+                                <span>+91 (123) 456-7890</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Connect With Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-100 p-3 rounded-full text-blue-600 hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 p-3 rounded-full text-blue-600 hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 p-3 rounded-full text-blue-600 hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-question-circle text-blue-600 mr-4"></i>
+                Frequently Asked Questions
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">What is PneumoScan?</h3>
+                    <p class="text-gray-600">
+                        PneumoScan is an AI-powered tool that analyzes chest X-ray images to detect pneumonia with high accuracy using the VGG16 model. It assists medical professionals in making faster and more accurate diagnoses.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">How accurate is the model?</h3>
+                    <p class="text-gray-600">
+                        The VGG16 model achieves over 92% accuracy on the test dataset, validated against the Chest X-ray Pneumonia Dataset from Kaggle.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Can I contribute?</h3>
+                    <p class="text-gray-600">
+                        Yes, contributions are welcome! Please use the contact form above to reach out, and we'll guide you on how to get involved in our project.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Is the service free?</h3>
+                    <p class="text-gray-600">
+                        We offer both free and premium tiers. Contact us to learn more about our pricing plans and how we can help your healthcare facility.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">PneumoScan</h3>
+                    <p class="text-blue-100">Revolutionizing pneumonia detection through AI</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-blue-100 hover:text-white">Home</a></li>
+                        <li><a href="/about" class="text-blue-100 hover:text-white">About</a></li>
+                        <li><a href="/features" class="text-blue-100 hover:text-white">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/applications" class="text-blue-100 hover:text-white">Applications</a></li>
+                        <li><a href="/contact" class="text-blue-100 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-100 hover:text-white"><i class="fab fa-github text-2xl"></i></a>
+                        <a href="#" class="text-blue-100 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
+                        <a href="#" class="text-blue-100 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-500 mt-8 pt-8 text-center">
+                <p>© 2025 PneumoScan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

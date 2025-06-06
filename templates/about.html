@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - PneumoScan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-600 to-blue-700 p-4 shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-white text-2xl font-bold flex items-center">
+                    <i class="fas fa-lungs mr-2"></i>
+                    PneumoScan
+                </a>
+                <ul class="flex space-x-8">
+                    <li><a href="/" class="text-white hover:text-blue-200 transition-colors">Home</a></li>
+                    <li><a href="/about" class="text-white font-bold border-b-2 border-white">About</a></li>
+                    <li><a href="/features" class="text-white hover:text-blue-200 transition-colors">Features</a></li>
+                    <li><a href="/applications" class="text-white hover:text-blue-200 transition-colors">Applications</a></li>
+                    <li><a href="/contact" class="text-white hover:text-blue-200 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 py-20 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h1 class="text-5xl font-bold mb-4">About Us</h1>
+            <p class="text-xl text-blue-100">Discover the story behind PneumoScan's innovation in healthcare</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-6">
+        <!-- Mission Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-xl shadow-lg p-8 transform hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-bullseye text-3xl text-blue-600 mr-4"></i>
+                    <h2 class="text-3xl font-bold text-gray-800">Our Mission</h2>
+                </div>
+                <p class="text-gray-700 leading-relaxed text-lg">
+                    The PneumoScan project aims to revolutionize early diagnosis of pneumonia using artificial intelligence. Leveraging the power of deep learning, we provide a tool to assist medical professionals by analyzing chest X-ray images with high accuracy (>92%) using the VGG16 model. Our goal is to reduce diagnostic time and improve patient outcomes globally.
+                </p>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-layer-group text-blue-600 mr-4"></i>
+                Technology Stack
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4 flex items-center">
+                        <i class="fas fa-brain mr-3"></i>
+                        Machine Learning
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>VGG16 Architecture</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>TensorFlow 2.15.0</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Keras Data Augmentation</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4 flex items-center">
+                        <i class="fas fa-code mr-3"></i>
+                        Web Development
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Flask 3.0.3</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Tailwind CSS</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Modern JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dataset Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-database text-blue-600 mr-4"></i>
+                Dataset
+            </h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <p class="text-gray-700 mb-6">
+                    Our project utilizes the <a href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia" class="text-blue-600 hover:underline">Chest X-ray Pneumonia Dataset</a> from Kaggle.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-blue-800 mb-2">Training Set</h4>
+                        <p class="text-gray-700">5,216 images<br>(1,341 Normal, 3,875 Pneumonia)</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-blue-800 mb-2">Validation Set</h4>
+                        <p class="text-gray-700">16 images<br>(8 Normal, 8 Pneumonia)</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-blue-800 mb-2">Test Set</h4>
+                        <p class="text-gray-700">624 images<br>(234 Normal, 390 Pneumonia)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-users text-blue-600 mr-4"></i>
+                Our Team
+            </h2>
+            <div class="grid grid-cols-1 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="mb-6">
+                        <i class="fas fa-user-circle text-6xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">Nilay Pandya</h3>
+                    <p class="text-gray-600 text-lg mb-6">Lead Developer</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://github.com/nilay2004" target="_blank" 
+                           class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition-all duration-300">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nilay-pandya-b6ba62253" target="_blank"
+                           class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition-all duration-300">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Goals -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-rocket text-blue-600 mr-4"></i>
+                Future Goals
+            </h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <p class="text-gray-700 leading-relaxed text-lg mb-6">
+                    We aim to expand the model to detect other lung conditions, integrate with hospital systems, and deploy on mobile devices. Contributions and feedback are welcome to enhance our impact.
+                </p>
+                <a href="/contact" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Get Involved
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">PneumoScan</h3>
+                    <p class="text-blue-100">Revolutionizing pneumonia detection through AI</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-blue-100 hover:text-white">Home</a></li>
+                        <li><a href="/about" class="text-blue-100 hover:text-white">About</a></li>
+                        <li><a href="/features" class="text-blue-100 hover:text-white">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/applications" class="text-blue-100 hover:text-white">Applications</a></li>
+                        <li><a href="/contact" class="text-blue-100 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/nilay2004" target="_blank" class="text-blue-100 hover:text-white"><i class="fab fa-github text-2xl"></i></a>
+                        <a href="https://www.linkedin.com/in/nilay-pandya-b6ba62253" target="_blank" class="text-blue-100 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-500 mt-8 pt-8 text-center">
+                <p>© 2025 PneumoScan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

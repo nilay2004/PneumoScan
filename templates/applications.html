@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications - PneumoScan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-600 to-blue-700 p-4 shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-white text-2xl font-bold flex items-center">
+                    <i class="fas fa-lungs mr-2"></i>
+                    PneumoScan
+                </a>
+                <ul class="flex space-x-8">
+                    <li><a href="/" class="text-white hover:text-blue-200 transition-colors">Home</a></li>
+                    <li><a href="/about" class="text-white hover:text-blue-200 transition-colors">About</a></li>
+                    <li><a href="/features" class="text-white hover:text-blue-200 transition-colors">Features</a></li>
+                    <li><a href="/applications" class="text-white font-bold border-b-2 border-white">Applications</a></li>
+                    <li><a href="/contact" class="text-white hover:text-blue-200 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 py-20 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h1 class="text-5xl font-bold mb-4">Applications</h1>
+            <p class="text-xl text-blue-100">Discover how PneumoScan is transforming healthcare</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-6">
+        <!-- Real-World Applications -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-hospital-user text-blue-600 mr-4"></i>
+                Real-World Applications
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="text-blue-600 mb-6">
+                        <i class="fas fa-hospital text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Rural Healthcare</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Enables early detection in remote areas with limited radiologist access, reducing mortality rates by providing instant preliminary results.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="text-blue-600 mb-6">
+                        <i class="fas fa-users text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Mass Screening</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Supports large-scale screening during outbreaks, allowing rapid assessment of thousands of patients with minimal resources.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="text-blue-600 mb-6">
+                        <i class="fas fa-stethoscope text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Clinical Support</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Assists doctors with second opinions, enhancing diagnostic confidence and reducing human error in busy hospitals.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="text-blue-600 mb-6">
+                        <i class="fas fa-globe text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Global Health Initiatives</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Integrates with telemedicine platforms to support global health programs in low-income regions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Comparison -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-chart-bar text-blue-600 mr-4"></i>
+                Technology Comparison
+            </h2>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <p class="text-gray-600 mb-6">How PneumoScan outperforms traditional and AI-based solutions.</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-blue-600 text-white">
+                                <th class="py-4 px-6 text-left">Technology</th>
+                                <th class="py-4 px-6 text-left">Accuracy</th>
+                                <th class="py-4 px-6 text-left">Speed</th>
+                                <th class="py-4 px-6 text-left">Accessibility</th>
+                                <th class="py-4 px-6 text-left">Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="py-4 px-6">Manual Radiologist</td>
+                                <td class="py-4 px-6">80-85%</td>
+                                <td class="py-4 px-6">2-4 hours</td>
+                                <td class="py-4 px-6">Low (expert-dependent)</td>
+                                <td class="py-4 px-6">High</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="py-4 px-6">Generic AI (e.g., CNN)</td>
+                                <td class="py-4 px-6">88-90%</td>
+                                <td class="py-4 px-6">1-2 minutes</td>
+                                <td class="py-4 px-6">Moderate</td>
+                                <td class="py-4 px-6">Medium</td>
+                            </tr>
+                            <tr class="bg-blue-50 hover:bg-blue-100 transition-colors duration-200">
+                                <td class="py-4 px-6 font-semibold">PneumoScan (VGG16)</td>
+                                <td class="py-4 px-6 font-semibold text-blue-600">>92%</td>
+                                <td class="py-4 px-6 font-semibold text-blue-600"><1 second</td>
+                                <td class="py-4 px-6 font-semibold text-blue-600">High (web-based)</td>
+                                <td class="py-4 px-6 font-semibold text-blue-600">Low</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-lg p-12 text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Ready to Transform Your Healthcare Practice?</h2>
+                <p class="text-xl text-blue-100 mb-8">Join healthcare providers worldwide who are already using PneumoScan</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="/features" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Learn More
+                    </a>
+                    <a href="/contact" class="bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">PneumoScan</h3>
+                    <p class="text-blue-100">Revolutionizing pneumonia detection through AI</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-blue-100 hover:text-white">Home</a></li>
+                        <li><a href="/about" class="text-blue-100 hover:text-white">About</a></li>
+                        <li><a href="/features" class="text-blue-100 hover:text-white">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/applications" class="text-blue-100 hover:text-white">Applications</a></li>
+                        <li><a href="/contact" class="text-blue-100 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-100 hover:text-white"><i class="fab fa-github text-2xl"></i></a>
+                        <a href="#" class="text-blue-100 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
+                        <a href="#" class="text-blue-100 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-500 mt-8 pt-8 text-center">
+                <p>© 2025 PneumoScan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

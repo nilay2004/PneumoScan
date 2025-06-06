@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection - X-Ray Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <meta name="description" content="Upload chest X-ray images for instant pneumonia detection using our advanced analysis.">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-600 to-blue-700 p-4 shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-white text-2xl font-bold flex items-center">
+                    <i class="fas fa-lungs mr-2"></i>
+                    PneumoScan
+                </a>
+                <ul class="flex space-x-8">
+                    <li><a href="/" class="text-white font-bold border-b-2 border-white">Home</a></li>
+                    <li><a href="/about" class="text-white hover:text-blue-200 transition-colors">About</a></li>
+                    <li><a href="/features" class="text-white hover:text-blue-200 transition-colors">Features</a></li>
+                    <li><a href="/applications" class="text-white hover:text-blue-200 transition-colors">Applications</a></li>
+                    <li><a href="/contact" class="text-white hover:text-blue-200 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Pneumonia Detection</h1>
+            <p class="subtitle">Fast, accurate analysis of chest X-rays using advanced machine learning</p>
+            <a href="#upload-section" class="cta-button">Try It Now</a>
+        </div>
+        <div class="hero-image">
+            <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background with gradient -->
+              <defs>
+                <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f0f4ff" />
+                  <stop offset="100%" stop-color="#d0d8ff" />
+                </linearGradient>
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <!-- X-ray frame background -->
+              <rect x="100" y="50" width="400" height="400" rx="10" fill="url(#bgGradient)" stroke="#8090d0" stroke-width="2" />
+
+              <!-- X-ray film look -->
+              <rect x="120" y="70" width="360" height="360" rx="5" fill="#212836" />
+
+              <!-- Lungs outline -->
+              <g opacity="0.85" filter="url(#glow)">
+                <!-- Left lung -->
+                <path d="M230,140 C260,130 270,130 280,140 C290,160 295,200 290,250 C285,300 280,330 270,350 C260,370 240,380 220,350 C200,320 190,240 200,190 C210,160 220,145 230,140" fill="#e0e6ff" opacity="0.6" />
+
+                <!-- Right lung -->
+                <path d="M370,140 C340,130 330,130 320,140 C310,160 305,200 310,250 C315,300 320,330 330,350 C340,370 360,380 380,350 C400,320 410,240 400,190 C390,160 380,145 370,140" fill="#e0e6ff" opacity="0.6" />
+
+                <!-- Heart/mediastinum shadow -->
+                <ellipse cx="300" cy="200" rx="40" ry="60" fill="#aabcff" opacity="0.4" />
+
+                <!-- Ribs -->
+                <g stroke="#ffffff" stroke-width="1.5" opacity="0.4">
+                  <!-- Left ribs -->
+                  <path d="M150,140 C190,130 220,130 280,140" fill="none" />
+                  <path d="M145,170 C185,160 220,160 285,170" fill="none" />
+                  <path d="M140,200 C180,190 220,190 290,200" fill="none" />
+                  <path d="M140,230 C180,220 220,220 290,230" fill="none" />
+                  <path d="M140,260 C180,250 220,250 290,260" fill="none" />
+                  <path d="M145,290 C185,280 220,280 285,290" fill="none" />
+                  <path d="M150,320 C190,310 220,310 280,320" fill="none" />
+
+                  <!-- Right ribs -->
+                  <path d="M450,140 C410,130 380,130 320,140" fill="none" />
+                  <path d="M455,170 C415,160 380,160 315,170" fill="none" />
+                  <path d="M460,200 C420,190 380,190 310,200" fill="none" />
+                  <path d="M460,230 C420,220 380,220 310,230" fill="none" />
+                  <path d="M460,260 C420,250 380,250 310,260" fill="none" />
+                  <path d="M455,290 C415,280 380,280 315,290" fill="none" />
+                  <path d="M450,320 C410,310 380,310 320,320" fill="none" />
+                </g>
+
+                <!-- Potential pneumonia area in right lower lobe (subtle opacity) -->
+                <path d="M350,280 C365,275 380,285 385,310 C390,335 380,350 365,355 C350,360 335,350 330,330 C325,310 335,285 350,280" fill="#ffffff" opacity="0.2" />
+              </g>
+
+              <!-- Film markers -->
+              <text x="140" y="100" fill="#ffffff" font-family="monospace" font-size="14">R</text>
+              <text x="450" y="100" fill="#ffffff" font-family="monospace" font-size="14">PA</text>
+              <text x="420" y="400" fill="#ffffff" font-family="monospace" font-size="10">ID:12345</text>
+            </svg>
+        </div>
+    </header>
+
+    <main>
+        <section id="upload-section" class="upload-container">
+            <div class="card">
+                <h2><i class="fas fa-upload"></i> Upload X-Ray Image</h2>
+                <p>Drag and drop your chest X-ray image or click to browse files.</p>
+
+                <div class="upload-area" id="dropZone">
+                    <input type="file" id="xrayImage" accept="image/*" hidden>
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <p>Drop your X-ray image here or <span class="browse-text">browse</span></p>
+                </div>
+
+                <div class="preview-container">
+                    <img id="uploadedImage" alt="Uploaded X-ray">
+                </div>
+
+                <button id="predictBtn" class="predict-button" disabled>
+                    <i class="fas fa-search"></i> Analyze X-ray
+                </button>
+
+                <div id="loadingIndicator" class="loading-indicator hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing image...</p>
+                </div>
+
+                <div id="result" class="result-container hidden">
+                    <div class="result-header">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Analysis Results</h3>
+                    </div>
+                    <div class="result-content">
+                        <div class="result-score">
+                            <span id="resultText">--</span>
+                        </div>
+                        <div class="result-details">
+                            <p id="resultDescription">--</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-preview">
+            <h2>Why Choose Our Tool?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Results</h3>
+                    <p>Get analysis in seconds, not hours or days</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>High Accuracy</h3>
+                    <p>Trained on thousands of verified X-ray images</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data remains confidential and protected</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Medically Informed</h3>
+                    <p>Developed with healthcare professionals</p>
+                </div>
+            </div>
+            <div class="learn-more">
+                <a href="/features" class="secondary-button">Learn More About Features</a>
+                <a href="/applications" class="secondary-button ml-4">Explore Applications</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">PneumoScan</h3>
+                    <p class="text-blue-100">Revolutionizing pneumonia detection through AI</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-blue-100 hover:text-white">Home</a></li>
+                        <li><a href="/about" class="text-blue-100 hover:text-white">About</a></li>
+                        <li><a href="/features" class="text-blue-100 hover:text-white">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/applications" class="text-blue-100 hover:text-white">Applications</a></li>
+                        <li><a href="/contact" class="text-blue-100 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/nilay2004" target="_blank" class="text-blue-100 hover:text-white"><i class="fab fa-github text-2xl"></i></a>
+                        <a href="https://www.linkedin.com/in/nilay-pandya-b6ba62253" target="_blank" class="text-blue-100 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-500 mt-8 pt-8 text-center">
+                <p>© 2025 PneumoScan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropZone = document.getElementById('dropZone');
+            const fileInput = document.getElementById('xrayImage');
+            const uploadedImage = document.getElementById('uploadedImage');
+            const predictBtn = document.getElementById('predictBtn');
+            const browseText = document.querySelector('.browse-text');
+            const previewContainer = document.querySelector('.preview-container');
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+                hamburger.classList.toggle('active');
+            });
+
+            browseText.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('drag-over');
+            });
+
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('drag-over');
+            });
+
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('drag-over');
+                if (e.dataTransfer.files.length) {
+                    fileInput.files = e.dataTransfer.files;
+                    handleFileSelect();
+                }
+            });
+
+            dropZone.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', handleFileSelect);
+
+            function handleFileSelect() {
+                if (fileInput.files.length) {
+                    const file = fileInput.files[0];
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            uploadedImage.src = e.target.result;
+                            previewContainer.classList.add('active');
+                            predictBtn.disabled = false;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                }
+            }
+
+            predictBtn.addEventListener('click', function() {
+                const loadingIndicator = document.getElementById('loadingIndicator');
+                const resultContainer = document.getElementById('result');
+
+                loadingIndicator.classList.remove('hidden');
+                resultContainer.classList.add('hidden');
+
+                const formData = new FormData();
+                formData.append('file', fileInput.files[0]);
+
+                fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    loadingIndicator.classList.add('hidden');
+                    resultContainer.classList.remove('hidden');
+
+                    const resultText = document.getElementById('resultText');
+                    const resultDescription = document.getElementById('resultDescription');
+
+                    if (data.error) {
+                        resultText.textContent = 'Error';
+                        resultDescription.textContent = data.error;
+                        resultContainer.classList.add('error');
+                    } else {
+                        resultText.textContent = data.result;
+                        if (data.result.includes('Pneumonia')) {
+                            resultContainer.classList.add('positive');
+                            resultDescription.textContent = 'The model has detected patterns consistent with pneumonia. Please consult a medical professional for proper diagnosis.';
+                        } else {
+                            resultContainer.classList.add('negative');
+                            resultDescription.textContent = 'The model did not detect patterns consistent with pneumonia. This is not a medical diagnosis.';
+                        }
+                    }
+                })
+                .catch(error => {
+                    loadingIndicator.classList.add('hidden');
+                    resultContainer.classList.remove('hidden');
+                    resultContainer.classList.add('error');
+                    resultText.textContent = 'Error';
+                    resultDescription.textContent = 'There was a problem processing your image. Please try again.';
+                    console.error(error);
+                });
+            });
+        });
+    </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93424210e803bfe3',t:'MTc0NTI5NDg4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

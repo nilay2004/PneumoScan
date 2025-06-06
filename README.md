@@ -2,6 +2,10 @@
 
 PneumoScan is an advanced web-based application that leverages artificial intelligence to detect pneumonia from chest X-ray images. Using a deep learning model based on the VGG16 architecture, it achieves high accuracy in identifying pneumonia patterns in chest radiographs.
 
+## Live Demo
+
+Try the application live: [PneumoScan Demo](https://pneumoscan-1.onrender.com)
+
 ## Features
 
 - **Instant Analysis**: Upload chest X-ray images and receive results within seconds

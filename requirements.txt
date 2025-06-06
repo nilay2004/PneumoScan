@@ -1,9 +1,10 @@
 flask==3.0.3
-tensorflow==2.10.0
+tensorflow==2.15.0
 numpy==1.26.4
 opencv-python==4.9.0.80
 Pillow==10.3.0
 gunicorn==21.2.0
 h5py==3.13.0
-keras==2.10.0
+keras==2.15.0
 protobuf==4.25.1
+werkzeug==3.0.1

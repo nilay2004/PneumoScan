@@ -19,14 +19,23 @@ os.makedirs(VISUALIZATIONS_FOLDER, exist_ok=True)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Load the model
-model_path = os.path.join('models', 'vgg16_model_new.keras')
-try:
-    model = tf.keras.models.load_model(model_path)
-    logger.info("Model loaded successfully")
-except Exception as e:
-    logger.error(f"Failed to load model: {str(e)}")
-    raise
+# Initialize model as None
+model = None
+
+def load_model():
+    global model
+    model_path = os.path.join('models', 'vgg16_model_new.keras')
+    try:
+        if os.path.exists(model_path):
+            model = tf.keras.models.load_model(model_path)
+            logger.info("Model loaded successfully")
+            return True
+        else:
+            logger.warning(f"Model file not found at {model_path}")
+            return False
+    except Exception as e:
+        logger.error(f"Failed to load model: {str(e)}")
+        return False
 
 def preprocess_image(image_path):
     try:
@@ -61,6 +70,13 @@ def contact():
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    if model is None:
+        if not load_model():
+            return jsonify({
+                'error': 'Model not available. Please contact the administrator.',
+                'status': 'error'
+            }), 503
+
     try:
         if 'file' not in request.files:
             return jsonify({'error': 'No file uploaded'}), 400
@@ -98,5 +114,7 @@ def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == '__main__':
+    # Try to load the model at startup
+    load_model()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
